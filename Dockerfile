@@ -3,6 +3,8 @@ FROM python:alpine
 # Get latest root certificates
 RUN apk add --update ca-certificates && update-ca-certificates
 
+RUN apk add tzdata && ls /usr/share/zoneinfo && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime && echo "Europe/Moscow" >  /etc/timezone
+
 # Install the required packages
 RUN pip install redis flower
 
