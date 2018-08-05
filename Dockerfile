@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.6.6-alpine3.6
 
 # Get latest root certificates
 RUN apk add --update ca-certificates && update-ca-certificates
